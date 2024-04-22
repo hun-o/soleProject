@@ -1,0 +1,85 @@
+@charset "UTF-8";
+@import "reset.css";
+
+html {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.main_title {
+	background-color: gray;
+	color: #E2E2E2;
+	text-align: center;
+	width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    padding: 0px;
+    height: 60px;
+    font-size: xx-large;
+    text-align: center;
+    line-height: 60px;
+}
+
+.main_div_nav {
+	background-color: #D6D6D6;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+}
+.main_div_nav input{
+	margin-left: 1%;
+}
+.login_button {
+	margin-right: 1%;
+}
+.main_menu {
+	background-color: #292929;
+	color: white;
+	display: inline-block;
+	width:10%;
+	height: 89vh;
+	text-align: center;
+}
+
+.main_menu > div {
+	height: 60px;
+	line-height:60px;
+	font-size: x-large;
+}
+
+.main_menu > ul > li {
+	border: 1px solid #D6D6D6;
+	height: 40px;
+	width: 96%;
+	margin-left: 3px;
+}
+
+.main_menu > ul > li > a{
+	text-decoration: none;
+	color: white;
+	display:block;
+	height: 100%;
+	line-height: 40px;
+}
+
+.work_space {
+	height: 89vh;
+	width:100%;
+	display: inline-block;
+	flex-grow: 1; /* 남은 공간을 모두 차지하도록 설정 */
+}
+
+.work_area {
+	display: flex;
+   	flex-direction: column;
+    min-height: 100vh;
+}

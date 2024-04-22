@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper  namespace="com.example.demo.db.mapper.SelectMapper">
+
+	<select id="selectContentList" parameterType="com.example.demo.db.vo.SelectVO" resultType="com.example.demo.db.vo.SelectVO">
+		<![CDATA[
+			SELECT
+				  BL.SEQ 			AS SEQ
+			    , BL.TITLE 			AS TITLE
+			    , BL.CONTENT 		AS CONTENT
+			    , BL.SELECT_COUNT 	AS SELECT_COUNT
+			    , BL.INSERT_DATE 	AS INSERT_DATE
+			    , BL.PAGE_URL		AS PAGE_URL
+			 FROM
+				  TB_BOARD_LIST BL
+			WHERE 1=1
+			ORDER BY INSERT_DATE, SEQ DESC
+		]]>
+	</select>
+	
+	<select id="selectDetailList" parameterType="com.example.demo.db.vo.SelectVO" resultType="com.example.demo.db.vo.SelectVO">
+		<![CDATA[
+			SELECT
+				  BL.SEQ 				AS SEQ
+			    , BL.TITLE 				AS TITLE
+			    , BL.CONTENT 			AS CONTENT
+			    , BL.SELECT_COUNT 		AS SELECT_COUNT
+			    , BL.INSERT_DATE 		AS INSERT_DATE
+			    , BL.PAGE_URL			AS PAGE_URL
+                , BC.CONTENT_COMMENT 	AS CONTENT_COMMENT
+			 FROM
+				    TB_BOARD_LIST BL
+                  , TB_BOARD_COMMENT BC
+			WHERE 1=1
+			  AND SEQ = #{seq}
+              AND BL.PAGE_URL = BC.PAGE_URL
+			ORDER BY INSERT_DATE, SEQ DESC;
+		]]>
+	</select>
+</mapper>
