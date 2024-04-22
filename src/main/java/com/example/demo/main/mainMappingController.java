@@ -21,5 +21,5 @@ public class mainMappingController {
 	public String demo_test() throws Exception {
 		return "demo test";
 	}
-	
+	  
 }
